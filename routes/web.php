@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DasboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,7 +17,10 @@ Route::get('/detail', function () {
     return view('berita.detail');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+
+Route::get('/login', [AuthController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [AuthController::class, 'authenticate']);
+Route::post('/logout', [AuthController::class, 'logout']);
+
+Route::get('/dasboard', [DasboardController::class, 'index'])->middleware('auth');
 

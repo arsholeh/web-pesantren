@@ -28,9 +28,16 @@
             <a class="nav-link">Kontak</a>
           </li>
         </ul>
-        <form class="d-flex">
-          <button class="btn btn-outline-danger btn-danger text-white" type="submit">Register</button>
-        </form>
+        <div class="d-flex">
+            @auth
+              <form action="/logout" method="POST">
+                @csrf
+                  <button class="btn btn-outline-danger btn-danger text-white" type="submit">Logout</button>
+              </form>
+              @else   
+                <button class="btn btn-outline-danger btn-danger text-white" type="submit">Register</button>
+            @endauth
+        </div>
       </div>
     </div>
   </nav>

@@ -4,7 +4,7 @@
     <section style="margin-top: 100px">
         <div class="container col-lg-6 mt-5">
             <h3 class="fw-bold mt-5">Halaman Login Admin Pesantren</h3>
-            <form action="" method="post">
+            <form action="/login" method="post">
                 @csrf
                 <div class="form-group mb-3">
                     <label for="">Masukan Email</label>
