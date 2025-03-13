@@ -7,6 +7,12 @@
         <title>Pesantren Al-Hijrah</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.1/dist/summernote-bs5.min.js"></script>
+  </head>
         
     <body>
 
@@ -82,16 +88,38 @@
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
           
           <script>
-            const navbar = document.querySelector("#navbar");
-            window.onscroll = () => {
-              if(window.scrollY > 100) {
-                navbar.classList.add("scroll-nav-active");
-                navbar.classList.add("text-nav-active");
-                navbar.classList.remove("navbar-dark");
-              } else {
-                navbar.classList.remove("scroll-nav-active");
-              }
-            };
+
+            $(function(){
+              $('#summernote').summernote({
+                    placeholder: 'Hello stand alone ui',
+                    tabsize: 2,
+                    height: 120,
+                    toolbar: [
+                      ['style', ['style']],
+                      ['font', ['bold', 'underline', 'clear']],
+                      ['color', ['color']],
+                      ['para', ['ul', 'ol', 'paragraph']],
+                      ['table', ['table']],
+                      ['insert', ['link', 'picture', 'video']],
+                      ['view', ['fullscreen', 'codeview', 'help']]
+                    ]
+              });
+
+               const navbar = document.querySelector("#navbar");
+              window.onscroll = () => {
+                if(window.scrollY > 100) {
+                  navbar.classList.add("scroll-nav-active");
+                  navbar.classList.add("text-nav-active");
+                  navbar.classList.remove("navbar-dark");
+                } else {
+                  navbar.classList.remove("scroll-nav-active");
+                }
+              };
+            })
+            
+
+
+            
           </script>
         </body>
 </html>
