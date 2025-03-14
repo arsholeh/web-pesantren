@@ -5,6 +5,10 @@
         <div class="container col-lg-8 py-5">
             <h3>Halama Dasboard Admin</h3>
             <p>Selamat Datang Di Halama Dasboard Admin</p>
+
+            <div class="mb-2">
+              <a href="/blog" class="text-decoration-none ">Kelola Artikel</a>
+            </div>
             <div class="row">
                 <div class="col-lg-6">
                     <div class="card shadow-sm rounded-3 border-0">

@@ -57,7 +57,7 @@
               <p class="mb-3 text-secondary">{{ $item->created_at }}</p>
               <h4 class="fw-bold mb-3">{{ $item->judul }}</h4>
               <p class="text-secondary">#Pesantrenmodern</p>
-             <a href="" class="text-decoration-none text-danger">Selengkanya</a>
+             <a href="/berita/{{ $item->slug }}" class="text-decoration-none text-danger">Selengkanya</a>
            </div>
           </div>     
         </div>   
@@ -65,7 +65,7 @@
     </div>
 
     <div class="footer-berita text-center">
-      <a href="" class="btn btn-outline-danger">Berita Lainya</a>
+      <a href="/berita" class="btn btn-outline-danger">Berita Lainya</a>
     </div>
   </div>
 </section>

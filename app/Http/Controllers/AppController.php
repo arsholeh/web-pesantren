@@ -21,9 +21,9 @@ class AppController extends Controller
 
     function detail ($slug) {
 
-        $artikel = Blog::where('slug'.$slug)->first();
-        return view('berita.berita', [
-            'artikels' => $artikel
+        $artikel = Blog::where('slug', $slug)->first();
+        return view('berita.detail', [
+            'artikel' => $artikel
         ]);
     }
 }
