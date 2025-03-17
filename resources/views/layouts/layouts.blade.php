@@ -5,6 +5,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="ic-logo.ico" type="image/x-icon">
         <title>Pesantren Al-Hijrah</title>
+
+        {{-- @if (Request::segment(1) = '')
+            <meta property="og:title" content="Pesantren Al-Hijrah"/>
+            <meta name="description" content="Pesantren modern dengan fasilitas lengkap"/>
+            <meta property="og:url" content="http://pesantrenalhijrah.com"/>
+            <meta property="og:description" content="Pesantren Al-Hijrah"/>
+            <meta property="og:image" content="{{ asset('assets/ic-logo.png') }}"/>
+            <title>Pesantren Al-Hijrah</title>
+        @elseif (Request::segment(1) = 'detail')
+            <meta property="og:title" content="{{ $artikel->judul }}"/>
+            <meta name="description" content="{{ $artikel->judul }}"/>
+            <meta property="og:url" content="http://pesantrenalhijrah.com/detail/{{ $artikel->slug }}"/>
+            <meta property="og:description" content="{{ $artikel->judul }}"/>
+            @if ($artikel->image)
+              <meta property="og:image" content="{{ asset('storage/artikel/' . $artikel->image) }}"/>
+            @else
+              <meta property="og:image" content="{{ asset('assets/ic-logo.png') }}"/>            
+            @endif
+            <meta type="og:type" content="article"/>
+            <title>Pesantren Al-Hijrah | {{ $artikel->title }}</title>
+        @endif --}}
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

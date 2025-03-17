@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Intervention\Image\ImageManagerStatic as Image;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class BlogController extends Controller
 {
@@ -106,9 +107,18 @@ class BlogController extends Controller
 
        $request->validate($rules, $message);
 
+       if ($request->file('image')){
+        if ($blog->image) {
+            Storage::disk('local')->delete('public/artikel/' . $blog->image);
+        }
+        
+        $filename = time() . '.' . $request->file('image')->extension();
+        $request->file('image')->storeAs('public/artikel', $filename);
+       }
+
        $blog->update([
         'judul' => $request->judul,
-        'image' => $request->image,
+        'image' => $filename,
         'desc' => $request->desc
        ]);
 
@@ -118,7 +128,9 @@ class BlogController extends Controller
 
     public function destroy($id) {
         $artikel = Blog::find($id);
-
+        if(Storage::disk('local')->exists('public/artikel/' . $artikel->image)){
+            Storage::disk('local')->delete('public/artikel/' . $artikel->image);
+        }
         $artikel->delete();
 
         return redirect('blog')->with('succes', 'databerhasil dihapus');
