@@ -3,7 +3,7 @@
 @section('content')
     <section style="margin-top: 100px">
         <div class="container col-lg-8">
-             <h4>Halaman Blog Artikel</h4>
+             <h4>Halaman Photo Artikel</h4>
             
              <a href="{{ route('blog.create') }}" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">Upload Photo</a>
 
