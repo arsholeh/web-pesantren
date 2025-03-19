@@ -1,8 +1,8 @@
-# Laravel ToDo App
+# Laravel Web Pesantren
 
-This is a simple ToDo app with multiple user support.
+This is a simple  Web Pesantren with multiple user support.
 
-This is built on Laravel Framework 11 This was built for demonstrate purpose.
+This is built on Laravel Framework 11. This was built for demonstrate purpose.
 
 ## Installation
 
